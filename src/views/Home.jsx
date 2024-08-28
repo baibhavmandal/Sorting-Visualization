@@ -13,6 +13,10 @@ const sortingList = [
     label: 'Quick Sort Visualization',
     link: '/quick-sort',
   },
+  {
+    label: 'Selection Sort Visualization',
+    link: '/selection-sort',
+  },
 ];
 
 const Home = () => {

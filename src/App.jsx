@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from "./views/Home.jsx"
 import InsertionSort from './views/InsertionSort.jsx';
 import QuickSort from './views/QuickSort.jsx';
+import SelectionSort from './views/SelectionSort.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: '/quick-sort',
     element: <QuickSort />,
+  },
+  {
+    path: '/selection-sort',
+    element: <SelectionSort />,
   },
 ]);
 
