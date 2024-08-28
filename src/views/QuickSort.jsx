@@ -10,9 +10,9 @@ import {CommonButton} from "../components/Button.jsx"
 // Utils
 import generateRandomArray from "../utils/generateRandomArray.js";
 import {generateChartData, optionsChartData} from "../utils/chartData.js"
-import insertionSort from "../utils/insertionSort.js"
+import quickSorter from "../utils/quickSorter.js"
 
-const InsertionSort = () => {
+const QuickSort = () => {
   const [dataFromChild, setDataFromChild] = useState(generateRandomArray(20, 100));
   const [chartData, setChartData] = useState(optionsChartData);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -24,7 +24,7 @@ const InsertionSort = () => {
 
   const startSort = () => {
     setIsDisabled(true);  // Disable input during sorting
-    insertionSort([...dataFromChild], setDataFromChild, setChartData, generateChartData)
+    quickSorter([...dataFromChild], setDataFromChild, setChartData, generateChartData)
       .finally(() => setIsDisabled(false));  // Re-enable input after sorting
   };
 
@@ -34,12 +34,12 @@ const InsertionSort = () => {
 
   return (
     <>
-      <Header title="Insertion Sort Visualization" />
+      <Header title="Quick Sort Visualization" />
       <RandomArrayGenerator onData={handleDataFromChild} isDisabled={isDisabled} />
-      <CommonButton onClick={startSort} label="Start Insertion Sort" />
+      <CommonButton onClick={startSort} label="Start Quick Sort" />
       <Bar data={chartData} />
     </>
   );
 };
 
-export default InsertionSort;
+export default QuickSort;

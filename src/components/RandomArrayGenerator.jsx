@@ -6,7 +6,7 @@ import {CommonButton} from "../components/Button.jsx"
 // Utils
 import generateRandomArray from "../utils/generateRandomArray.js"
 
-const RandomArrayGenerator = ({ onData }) => {
+const RandomArrayGenerator = ({ onData, isDisabled }) => {
   const [inputArray, setInputArray] = useState([]);
 
   const handleInputChange = (event) => {
@@ -35,12 +35,13 @@ const RandomArrayGenerator = ({ onData }) => {
     <div>
       <form onSubmit={handleSubmit}>
         <textarea
+        disabled={isDisabled}
           type="text" 
           placeholder="Enter custom array values" 
           onChange={handleInputChange} 
           className="bg-gray-50 border border-light-cyan text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-marian-blue block w-full p-2.5"
         />
-        <CommonButton type="submit" label="Submit" />
+        <CommonButton type="submit" label="Submit" isDisabled={isDisabled} />
       </form>
       <p>
         <b>Note:</b> If you enter a custom array, the syntax should be a number followed by a comma and space before entering the next number.

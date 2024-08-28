@@ -30,7 +30,21 @@
     font-size: 30px;
   }
 
+  h2 {
+    padding: 8px;
+    font-size: 20px;
+  }
+
   div {
+    padding: 8px;
+  }
+
+  ul {
+    padding: 8px;
+    list-style: square
+  }
+
+  li {
     padding: 8px;
   }
 }
